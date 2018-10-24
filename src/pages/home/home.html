@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Inicio</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-list-header>
+      Misiones Asignadas
+    </ion-list-header>
+
+    <ion-item *ngFor="let mision of misiones" (click)="misionStart($event)">
+        <ion-avatar item-start>
+
+
+        </ion-avatar>
+        <h2>{{mision.descripcion}}</h2>
+        <h3>{{mision.fechaInicio | date : "dd-MM-y" }}</h3>
+        <p>{{mision.observacionInicial}}</p>
+      </ion-item>
+  </ion-list>
+
+
+
+</ion-content>
